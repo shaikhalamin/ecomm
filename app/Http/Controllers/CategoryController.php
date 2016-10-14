@@ -28,15 +28,32 @@ class CategoryController extends Controller
 	}
 
 	public function getManageCategory(){
-        return view('admin.categorymanage')
-        ->with('categories', Category::all());
+    $categories =Category::orderBy('created_at', 'desc')->paginate(6);
+        return view('admin.categorymanage',['categories'=>$categories]);
     }
 
-    public function postDeleteCategory($id){
-       $category = Category::where('id',$id)->first();
-       $category->delete($id);
+  public function getEditCategory($id){
+    $category = Category::where('id',$id)->get()->first();
+    //dd($category);
+    return view('admin.edit-category',['category'=>$category]);
+  }
+
+  public function postEditCategory($id){
+
+    //$category = Category::where('id',$id)->get()->first();
+    //dd($id);
+    //return view('admin.edit-category',['category'=>$category]);
+    return redirect()->back()->with('category', 'You are not allowed to edit Category!!!');
+  }
+
+
+  public function postDeleteCategory($id){
+       //$category = Category::where('id',$id)->first();
+       //$category->delete($id);
        
-       return redirect()->back()->with('category', 'Category deleted.!');
-    }
+       return redirect()->back()->with('category', 'You are not allowed to delete Category!!!');
+  }
+
+
 
 }

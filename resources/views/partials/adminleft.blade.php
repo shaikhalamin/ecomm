@@ -1,8 +1,4 @@
 <div class="list-group">
-	<a href="#" class="list-group-item">
-	  <i class="fa fa-tasks" aria-hidden="true"></i>
-		Profile Mangement
-	</a>
 	<a href="{{ route('admin.category') }}" class="list-group-item">
 	  <i class="fa fa-tasks" aria-hidden="true"></i>
 		Create Category

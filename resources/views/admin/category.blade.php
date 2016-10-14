@@ -52,8 +52,16 @@
 						</div>
 				  	</div>
 				</div>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
 				<div class="panel-footer default">
-					<h5>Admin panel | Create Category</h5>
+					@include('partials.footer')
 				</div>
 
 			</div>

@@ -30,12 +30,12 @@
 									<div class="col-md-6 col-md-6 col-md-offset-0">
 										<form class="form-vertical" role="form" method="post" action="{{ route('user.profile') }}" enctype="multipart/form-data">
 										<input type="hidden" value="{{ csrf_token() }}" name="_token">
-								            <div class="form-group">
-								                <input type="file" name="avatar" class="form-control" id="avatar">
-								            </div>
-								            <div class="form-group">
+								            
+								                <input type="file" name="avatar" class="form-control" id="avatar" style="padding-bottom: 4px;margin-bottom: 4px;">
+								            
+								            
 								            	<button type="submit" class="btn btn-sm btn-info">Upload Image</button>
-								            </div>
+								            
 							            </form>
 							        </div>    
 								</div>

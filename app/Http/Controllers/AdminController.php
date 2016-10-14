@@ -22,9 +22,9 @@ class AdminController extends Controller
         foreach (Category::all() as $category) {
           $categories[$category->id]=$category->name;
         }
-        return view('admin.product')
-        ->with('products', Product::all())
-        ->with('categories', $categories);  
+        $products =Product::paginate(6);
+        return view('admin.product',['products'=>$products,'categories'=>$categories]);
+        
     }
 
     public function postCreate(Request $request){
@@ -56,8 +56,43 @@ class AdminController extends Controller
 
 
   public function getAllProducts(){
-    $products = Product::all();
-    return view('admin.manageproduct',['products' => $products]);
+    //$products = Product::all();
+    $products =Product::orderBy('created_at', 'desc')->paginate(10);
+    $categories = Category::all();
+    return view('admin.manageproduct',['products' => $products,'categories'=>$categories]);
 
   }
+
+  public function getEditProduct($id){
+      //dd($id);
+      
+        $categories=array();
+        $catquires =Category::all();
+        foreach ($catquires as $category) {
+        $categories[$category->id]=$category->name;
+        }
+        $products =Product::where('id',$id)->get()->first();
+        return view('admin.edit-product',['products'=>$products,'categories'=>$categories]);
+    }   
+
+    public function postEditProduct($id){
+      
+    return redirect()->back()->with('product', 'You are not allowed to edit Product!!!');
+    }
+
+    public function postDeleteProduct(){
+      
+    return redirect()->back()->with('product', 'You are not allowed to delete Product!!!');
+    }
+
+
+    public function postProductFeedBack(Request $request){
+      $this->validate($request,[
+        'name'=>'required|max:255',
+        'description'=>'required|max:255',
+        'email'=>'required|max:255',
+      ]);
+      
+    return redirect()->back()->with('feedback', 'Thank You For Inform Us!!!');
+    } 
 }

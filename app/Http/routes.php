@@ -16,6 +16,8 @@ Route::get('/admin/category', [
 	'as'   => 'admin.category'
 
 ]);
+
+
 Route::post('/admin/category', [
 	'uses' => 'CategoryController@postCreate',
 	'as'   => 'admin.category'
@@ -24,6 +26,15 @@ Route::get('/admin/managecategory', [
 	'uses' => 'CategoryController@getManageCategory',
 	'as'   => 'admin.managecategory'
 ]);
+Route::get('/admin/editcategory/{id}', [
+	'uses' => 'CategoryController@getEditCategory',
+	'as'   => 'admin.editcategory'
+]);
+Route::post('/admin/editcategory/{id}', [
+	'uses' => 'CategoryController@postEditCategory',
+	'as'   => 'admin.editcategory'
+]);
+
 Route::post('/admin/deletecategory/{id}', [
 	'uses' => 'CategoryController@postDeleteCategory',
 	'as'   => 'admin.deletecategory'
@@ -41,6 +52,25 @@ Route::get('/admin/manageproduct', [
 	'uses' => 'AdminController@getAllProducts',
 	'as'   => 'admin.manageProduct'
 ]);
+Route::get('/admin/editproduct/{id}', [
+	'uses' => 'AdminController@getEditProduct',
+	'as'   => 'admin.editProduct'
+]);
+Route::post('/admin/editproduct/{id}', [
+	'uses' => 'AdminController@postEditProduct',
+	'as'   => 'admin.editProduct'
+]);
+
+Route::post('/admin/deleteproduct', [
+	'uses' => 'AdminController@postDeleteProduct',
+	'as'   => 'admin.deleteProduct'
+]);
+
+
+Route::post('/admin/feedback', [
+	'uses' => 'AdminController@postProductFeedBack',
+	'as'   => 'admin.productFeedback'
+]);
 
 
 
@@ -48,6 +78,12 @@ Route::get('/admin/manageproduct', [
 Route::get('/', [
 	'uses' => 'ProductController@getIndex',
 	'as'   => 'product.index'
+]);
+
+Route::get('/product/{id}', [
+	'uses' => 'ProductController@getProductByCategory',
+	'as'   => 'product.getProduct'
+
 ]);
 
 Route::get('/add-to-cart/{id}',[

@@ -15,10 +15,15 @@ use Auth;
 class ProductController extends Controller
 {
     public function getIndex(){
-    	$products = Product::paginate(6);
-        //$products=$products->paginate(9);
+        $products =Product::orderBy('created_at', 'desc')->paginate(6);
         $categories = Category::all();
     	 return view('shop.index', ['products' => $products,'categories' => $categories ]);
+    }
+
+    public function getProductByCategory($id){
+        $categories = Category::all();
+        $products = Product::where('category_id',$id)->orderBy('created_at', 'desc')->paginate(6);
+        return view('shop.category-product',['products'=>$products,'categories'=>$categories]);
     }
 
     public function getAddToCart(Request $request,$id){
