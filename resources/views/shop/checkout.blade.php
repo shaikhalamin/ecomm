@@ -5,6 +5,9 @@
 @endsection
 
 @section('content')
+<div class="panel panel-default" style="margin-top: -12px;">
+
+	<div class="panel-body">
 		<div class="row">
 			<div class="col-md-6 col-md-4 col-md-offset-4 col-sm-offset-3">
 				<h1>Checkout</h1>
@@ -65,5 +68,16 @@
 					<button type="submit" class="btn btn-success">Buy Now</button>
 				</form>
 			</div>
-		</div>	
+		</div>
+
+	</div>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+	@include('partials.footer')
+</div>		
+
+
 @endsection
