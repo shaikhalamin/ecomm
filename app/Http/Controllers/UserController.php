@@ -109,6 +109,6 @@ class UserController extends Controller
             Session::forget('cart');
         }
         Auth::logout();
-        return redirect()->route('user.signin')->with('info','You are signed out!');
+        return redirect()->route('user.signin')->with('logout','You are signed out!');
     }
 }

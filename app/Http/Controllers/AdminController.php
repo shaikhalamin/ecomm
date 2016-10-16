@@ -80,9 +80,10 @@ class AdminController extends Controller
     return redirect()->back()->with('product', 'You are not allowed to edit Product!!!');
     }
 
-    public function postDeleteProduct(){
-      
-    return redirect()->back()->with('product', 'You are not allowed to delete Product!!!');
+    public function postDeleteProduct($id){
+      $product = Product::where('id',$id)->first();
+       $product->delete($id);
+    return redirect()->back()->with('product', 'Product Deleted!!!');
     }
 
 

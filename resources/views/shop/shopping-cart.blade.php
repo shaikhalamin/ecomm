@@ -7,6 +7,11 @@
 @section('content')
 <div class="panel panel-default" style="margin-top: -12px;">
 	<div class="panel-body">
+			<div class="row">
+				<h3 class="text-center">Shopping Cart</h3>
+				<br>
+				<br>
+			</div>
 			@if(Session::has('cart'))
 				<div class="row">
 					<div class="col-md-6 col-md-6 col-md-offset-3 col-sm-offset-3">

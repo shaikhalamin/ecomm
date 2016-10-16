@@ -61,7 +61,7 @@ Route::post('/admin/editproduct/{id}', [
 	'as'   => 'admin.editProduct'
 ]);
 
-Route::post('/admin/deleteproduct', [
+Route::post('/admin/deleteproduct/{id}', [
 	'uses' => 'AdminController@postDeleteProduct',
 	'as'   => 'admin.deleteProduct'
 ]);

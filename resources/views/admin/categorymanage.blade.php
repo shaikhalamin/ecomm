@@ -17,7 +17,7 @@
 						<div class="col-md-9">
 							<div class="row">
 								<div class="col-md-12 col-md-12 col-md-offset-0">
-										
+									@include('partials.confirm')	
 										<div class="row">
 											<h3 class="text-center">Manage Category</h3>
 										</div>
@@ -52,7 +52,7 @@
 															</a>
 							                        	</td>
 							                            <td>
-							                      			<form action="{{route('admin.deletecategory', ['id'=> $category->id]) }}" method="post">
+							                      			<form id="category_delete" class="category-delete" action="{{route('admin.deletecategory', ['id'=> $category->id]) }}" method="post">
 			                                 					<input type="submit" class="btn btn-danger btn-sm" value="Delete Category">
 			                                 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 		                                					</form> 

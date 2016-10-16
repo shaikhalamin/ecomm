@@ -12,6 +12,15 @@
 
 	<div class="panel-body">
 		<div class="row">
+			<div class="row">
+				<div class="col-md-6 col-md-6 col-md-offset-3">
+					@if (Session::has('logout'))
+					<div class="alert alert-info" data-dismiss = "alert" role="alert">
+					    {{ Session::get('logout') }}
+					</div>
+					@endif
+				</div>	
+			</div>
 		    <div class="col-md-6 col-md-6 col-md-offset-3">
 		    <h3><b>Sign In Your Account</b></h3>
 		        <form class="form-vertical" role="form" method="post" action="{{ route('user.signin') }}">

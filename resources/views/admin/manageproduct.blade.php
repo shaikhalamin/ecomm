@@ -27,8 +27,10 @@
 						<div class="col-md-9">
 							<div class="row">
 								<div class="col-md-12 col-md-12 col-md-offset-0">
+
 										<div class="row">
 											<div class="col-md-6 col-md-6 col-md-offset-3">
+
 												@if (Session::has('product'))
 												<div class="alert alert-danger" data-dismiss = "alert" role="alert">
 												    {{ Session::get('product') }}
@@ -44,10 +46,11 @@
 								                    <thead>
 								                      <tr class="bg-success">
 								                        <th>Title</th>
+								                        <th>Category</th>
 								                        <th>Description</th>
 								                        <th>price</th>
 								                        <th>availability</th>
-								                        <th>Image</th>
+								                        
 								                        <th>Edit</th>
 								                        <th>Delete</th>
 								                      </tr>
@@ -60,6 +63,9 @@
 							                                <b>{{ $product->title }}</b>
 							                            </td>
 							                            <td>
+							                                <b>{{ $product->category->name }}</b>
+							                            </td>
+							                            <td>
 							                                <b>{{ $product->description }}</b>
 							                            </td>
 							                            <td>
@@ -69,18 +75,19 @@
 							                            <td>
 							                                <b>{{ $product->availability}}</b>
 							                            </td>
-							                            <td>
-							                                <b>{{ $product->image }}</b>
-							                            </td>
+							                            
 							                            <td>
 							                            	<a href="{{route('admin.editProduct', ['id'=> $product->id]) }}">Edit
 															</a>
 														</td>
 							                            <td>
-							                                <form action="{{ route('admin.deleteProduct') }}" method="post">
-			                                 					<input type="submit" value="Delete">
+							                                <form id="deleteData" action="{{ route('admin.deleteProduct',['id'=>$product->id]) }}" method="post">
+			                                 					<input type="submit" id="delete_confirm" value="Delete">
+
+
 			                                 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
-		                                					</form>  
+		                                					</form>
+ 
 							                            </td>
 													@endforeach
 												</tr>
@@ -96,7 +103,7 @@
 					</div>
 				</div>
 				@include('partials.footer')
-
+				
 			</div>		
 		</div>
 	</div>
