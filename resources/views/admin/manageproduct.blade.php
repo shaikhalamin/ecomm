@@ -26,6 +26,7 @@
 
 						<div class="col-md-9">
 							<div class="row">
+								@include('partials.confirmproductdelete')
 								<div class="col-md-12 col-md-12 col-md-offset-0">
 
 										<div class="row">
@@ -81,7 +82,7 @@
 															</a>
 														</td>
 							                            <td>
-							                                <form id="deleteData" action="{{ route('admin.deleteProduct',['id'=>$product->id]) }}" method="post">
+							                                <form id="confirmProduct" action="{{ route('admin.deleteProduct',['id'=>$product->id]) }}" method="post">
 			                                 					<input type="submit" id="delete_confirm" value="Delete">
 
 
