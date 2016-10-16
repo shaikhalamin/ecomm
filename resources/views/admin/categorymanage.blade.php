@@ -17,7 +17,7 @@
 						<div class="col-md-9">
 							<div class="row">
 								<div class="col-md-12 col-md-12 col-md-offset-0">
-									@include('partials.confirm')	
+									@include('partials.confirmcategory')	
 										<div class="row">
 											<h3 class="text-center">Manage Category</h3>
 										</div>
