@@ -15,7 +15,7 @@ Ecommerce</a>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
  
-      <form class="navbar-form navbar-left" role="search" action="{{route('product.searchProduct')}}">
+      <form class="navbar-form navbar-left search-form" role="search" action="{{route('product.searchProduct')}}">
           <div class="form-group">
             <input type="text" class="form-control input-sm" id="search_form" name="query" placeholder="Search">
           </div>
