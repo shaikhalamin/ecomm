@@ -51,7 +51,7 @@ class CategoryController extends Controller
        //$category = Category::where('id',$id)->first();
        //$category->delete($id);
        
-       return redirect()->back()->with('category', 'Category deleted!!!');
+  return redirect()->back()->with('category', 'Insufficient permission to delete category!!!');
   }
 
 
