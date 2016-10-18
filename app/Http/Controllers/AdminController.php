@@ -95,5 +95,7 @@ class AdminController extends Controller
       ]);
       
     return redirect()->back()->with('feedback', 'Thank You For Inform Us!!!');
-    } 
+    }
+
+
 }

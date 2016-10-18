@@ -114,4 +114,25 @@ class ProductController extends Controller
         Session::forget('cart');
         return redirect()->route('product.index')->with('success', 'Successfully purchased product');
     }
+
+
+    public function getProductSearch(Request $request){
+     $query = $request->input('query');
+
+      if(!$query){
+       return redirect()->route('product.index')->with('feedback','please enter name to search!');
+      }
+
+      
+      $products = Product::where('title', 'LIKE', "%{$query}%")
+      ->orWhere('description', 'LIKE', "%{$query}%")
+      ->get();
+      $categories = Category::all();
+      //dd($products);
+     
+       return view('shop.search-result', ['products' => $products,'categories' => $categories ]);
+
+    } 
+
+
 }

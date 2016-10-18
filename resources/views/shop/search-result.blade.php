@@ -53,7 +53,6 @@
 									@endforeach
 								</div>
 							@endforeach
-							{!!$products->render()!!}	
 						</div>
 
 					</div>

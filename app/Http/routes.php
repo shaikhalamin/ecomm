@@ -71,7 +71,11 @@ Route::post('/admin/feedback', [
 	'uses' => 'AdminController@postProductFeedBack',
 	'as'   => 'admin.productFeedback'
 ]);
+Route::get('/search', [
+	'uses' => 'ProductController@getProductSearch',
+	'as'   => 'product.searchProduct'
 
+]);
 
 
 
@@ -85,6 +89,7 @@ Route::get('/product/{id}', [
 	'as'   => 'product.getProduct'
 
 ]);
+
 
 Route::get('/add-to-cart/{id}',[
 	'uses' => 'ProductController@getAddToCart',
