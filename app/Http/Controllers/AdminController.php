@@ -81,8 +81,8 @@ class AdminController extends Controller
     }
 
     public function postDeleteProduct($id){
-      $product = Product::where('id',$id)->first();
-      $product->delete($id);
+      //$product = Product::where('id',$id)->first();
+      //$product->delete($id);
     return redirect()->back()->with('product', 'Insufficient permission to delete product!!!');
     }
 
