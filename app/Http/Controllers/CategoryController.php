@@ -48,10 +48,10 @@ class CategoryController extends Controller
 
 
   public function postDeleteCategory($id){
-       //$category = Category::where('id',$id)->first();
-       //$category->delete($id);
+       $category = Category::where('id',$id)->first();
+       $category->delete($id);
        
-       return redirect()->back()->with('category', 'You are not allowed to delete Category!!!');
+       return redirect()->back()->with('category', 'Category deleted!!!');
   }
 
 

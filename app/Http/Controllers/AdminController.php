@@ -32,7 +32,7 @@ class AdminController extends Controller
         $this->validate($request,[
         'category_id'=>'required|max:255',
         'title'=>'required|max:255',
-        'description'=>'required|max:255',
+        'description'=>'required|min:50',
         'price'=>'required|max:255',
         'availability'=>'required|max:255',
         'image'=>'required|max:255',
