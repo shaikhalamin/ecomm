@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
- Search Result
+  Shaikh Ecommerce
 @endsection
 
 @section('content')

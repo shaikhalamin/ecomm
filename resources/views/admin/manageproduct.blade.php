@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
- Manage Product
+ Manage Product | Admin
 @endsection
 
 @section('content')

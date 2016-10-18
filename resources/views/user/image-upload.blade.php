@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('title')
- User Profile
+ Image upload | User Profile
 @endsection
 
 @section('content')

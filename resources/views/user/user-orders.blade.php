@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('title')
- User Profile
+Product Order | User Profile
 @endsection
 
 @section('content')

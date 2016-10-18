@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('title')
- Admin
+Product Create | Admin
 @endsection
 
 @section('content')

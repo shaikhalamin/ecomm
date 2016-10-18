@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
- Laravel shoping cart
+ Product Checkout
 @endsection
 
 @section('content')
