@@ -82,9 +82,8 @@
 															</a>
 														</td>
 							                            <td>
-							                                <form id="confirmProduct" action="{{ route('admin.deleteProduct',['id'=>$product->id]) }}" method="post">
-			                                 					<input type="submit" id="delete_confirm" value="Delete">
-
+							                                <form id="product{{ $product->id }}" onclick="getProdctId(this.id)" action="{{ route('admin.deleteProduct',['id'=>$product->id]) }}" method="post">
+			                                 					<button type="button" id="catmanage">Delete</button>
 
 			                                 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 		                                					</form>

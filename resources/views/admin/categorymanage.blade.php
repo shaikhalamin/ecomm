@@ -52,8 +52,8 @@
 															</a>
 							                        	</td>
 							                            <td>
-							                      			<form id="category_delete" class="category-delete" action="{{route('admin.deletecategory', ['id'=> $category->id]) }}" method="post">
-			                                 					<input type="submit" class="btn btn-danger btn-sm" value="Delete Category">
+																<form id="cat{{ $category->id }}" onclick="getCatId(this.id)" class="category-delete" action="{{route('admin.deletecategory', ['id'=> $category->id]) }}" method="post">
+							                      				<button type="button" class="btn btn-sm btn-danger" id="catmanage">Delete</button>
 			                                 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 		                                					</form> 
 							                            </td>
