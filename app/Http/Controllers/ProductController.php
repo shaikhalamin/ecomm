@@ -130,7 +130,7 @@ class ProductController extends Controller
       $categories = Category::all();
       //dd($products);
      
-       return view('shop.search-result', ['products' => $products,'categories' => $categories ]);
+       return view('shop.search-result', ['products' => $products->toJson(),'categories' => $categories ]);
 
     } 
 

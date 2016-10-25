@@ -33,26 +33,20 @@
 						</div>
 
 						<div class="col-md-9">
-							@foreach($products->chunk(3) as $productChunk)
-								<div class="row">
-									@foreach($productChunk as $product)
-										<div class="col-sm-4 col-md-4">
-										    <div class="thumbnail">
-										      <img src="/uploads/products/images/{{ $product->image }}" alt="{{ $product->title }}" class="img-responsive">
-										      	<div class="caption">
-											        <h3>{{ $product->title }}</h3>
-											        <p class="description">{{ $product->description }}</p>
+							<div class="col-sm-4 col-md-4">
+							    <div class="thumbnail hidden">
+							      <img src="" alt="" class="img-responsive imageShow">
+							      	<div class="caption">
+								        <h3 id="title"></h3>
+								        <p class="description"></p>
 
-											        <div class="clearfix">
-											        	<div class="pull-left price">${{ $product->price }}</div>
-											<a href="{{ route('product.addtocart', ['id'=>$product->id]) }}" class="btn btn-info pull-right" role="button">Add to Cart</a>
-											        </div>
-										      	</div>
-										    </div>
-									  	</div>
-									@endforeach
-								</div>
-							@endforeach
+								        <div class="clearfix">
+								        	<div class="pull-left price">$</div>
+								<a href="#" class="btn btn-info pull-right" id="addTocart" role="button">Add to Cart</a>
+								        </div>
+							      	</div>
+							    </div>
+							</div>
 						</div>
 
 					</div>
